@@ -7,6 +7,8 @@
 body {
   font-family: 'Space Mono', monospace;
   background-color: #0a051e;
+  /* background: #3b0e68;
+  background: radial-gradient(circle, #3b0e68 0%, #1a084e 100%); */
 }
 
 /* .body {
