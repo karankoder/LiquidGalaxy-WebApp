@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Header from './Header';
-import Voice from './Voice';
+import Voice from '../pages/Voice';
 
 export default function Background() {
     const canvasRef = useRef(null);

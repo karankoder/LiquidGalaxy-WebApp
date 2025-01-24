@@ -3,7 +3,7 @@ import styles from "./Voice.module.css";
 import mic from '../assets/mic.svg';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const Visualizer = () => {
+const Voice = () => {
     const [isAnimating, setIsAnimating] = useState(false);
     const [barWidths, setBarWidths] = useState([25, 25, 25, 25]);
     const {
@@ -48,36 +48,39 @@ const Visualizer = () => {
     };
 
     return (
-        <div className={styles.visualizerContainer}>
-            <div className={`${styles.micContainer} ${isAnimating && listening ? styles.glowing : ''}`} onClick={handleMicClick}>
-                <img src={mic} alt="Microphone Icon" className={styles.micImage} />
+        <>
+            <div className={styles.container}>
+                <div className={`${styles.micContainer} ${isAnimating && listening ? styles.glowing : ''}`} onClick={handleMicClick}>
+                    <img src={mic} alt="Microphone Icon" className={styles.micImage} />
+                </div>
+                <div className={styles.message}>
+                    Tap on Mic to Speak
+                </div>
+                <div className={styles.textContainer}>
+                    {isAnimating ? (transcript.length ? transcript : "Listening...") : ""}
+                </div>
+                <div className={styles.bars}>
+                    <div
+                        className={`${styles.bar} ${styles.blue}`}
+                        style={{ width: `${barWidths[0]}%` }}
+                    ></div>
+                    <div
+                        className={`${styles.bar} ${styles.red}`}
+                        style={{ width: `${barWidths[1]}%` }}
+                    ></div>
+                    <div
+                        className={`${styles.bar} ${styles.yellow}`}
+                        style={{ width: `${barWidths[2]}%` }}
+                    ></div>
+                    <div
+                        className={`${styles.bar} ${styles.green}`}
+                        style={{ width: `${barWidths[3]}%` }}
+                    ></div>
+                </div>
             </div>
-            <div className={styles.message}>
-                Tap on Mic to Speak
-            </div>
-            <div className={styles.textContainer}>
-                {isAnimating ? (transcript.length ? transcript : "Listening...") : ""}
-            </div>
-            <div className={styles.bars}>
-                <div
-                    className={`${styles.bar} ${styles.blue}`}
-                    style={{ width: `${barWidths[0]}%` }}
-                ></div>
-                <div
-                    className={`${styles.bar} ${styles.red}`}
-                    style={{ width: `${barWidths[1]}%` }}
-                ></div>
-                <div
-                    className={`${styles.bar} ${styles.yellow}`}
-                    style={{ width: `${barWidths[2]}%` }}
-                ></div>
-                <div
-                    className={`${styles.bar} ${styles.green}`}
-                    style={{ width: `${barWidths[3]}%` }}
-                ></div>
-            </div>
-        </div>
+
+        </>
     );
 };
 
-export default Visualizer;
+export default Voice;

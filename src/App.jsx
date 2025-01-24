@@ -10,8 +10,8 @@ function App() {
   return (
     <div className={styles.App}>
       <Toaster position="top-center" />
-      <RouterProvider router={router}></RouterProvider>
-      <Header />
+      <RouterProvider router={router}>
+      </RouterProvider>
     </div>
   )
 }
