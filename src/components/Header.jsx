@@ -6,6 +6,7 @@ import Lottie from 'lottie-react';
 import styles from './Header.module.css';
 import homeAnimation from '../assets/home-animation.json';
 import geminiAnimation from '../assets/gemini-animation.json';
+import settingAnimation from '../assets/setting-animation.json';
 import profileAnimation from '../assets/profile-animation2.json';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
@@ -18,6 +19,7 @@ const Header = () => {
     const [isMicAnimating, setIsMicAnimating] = useState(false);
     const [isGeminiAnimating, setIsGeminiAnimating] = useState(false);
     const [isProfileAnimating, setIsProfileAnimating] = useState(false);
+    const [isSettingAnimating, setIsSettingAnimating] = useState(false);
 
 
 
@@ -98,7 +100,16 @@ const Header = () => {
                     className={`${styles['nav-item']} ${activeIndex === 4 ? styles.active : ''}`}
                     onClick={() => setActiveIndex(4)}
                 >
-                    <FaCog size={25} />
+                    {isSettingAnimating ? (
+                        <Lottie
+                            animationData={settingAnimation}
+                            loop={false}
+                            onComplete={() => setIsSettingAnimating(false)}
+                            style={{ width: '35px', height: '35px' }}
+                        />
+                    ) : (
+                        <FaCog size={25} />
+                    )}
                     <span className={styles['nav-text']}>Setting</span>
                 </Link>
                 <span
