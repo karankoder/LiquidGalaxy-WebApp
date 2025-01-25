@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Header from './Header';
-import Voice from '../pages/Voice';
 
 export default function Background() {
     const canvasRef = useRef(null);
@@ -160,11 +158,27 @@ export default function Background() {
             window.removeEventListener("click", () => { });
         };
     }, []);
-
     return (
         <>
-            <canvas ref={canvasRef}></canvas>
-            <button style={{ position: 'absolute', zIndex: 2, top: '10px', left: '10px', userSelect: 'none' }} onClick={() => clearTheMess()}>Clear the mess</button>
+            <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}></canvas>
+            <button 
+                style={{ 
+                    position: 'absolute', 
+                    zIndex: 2, 
+                    top: '10px', 
+                    left: '10px', 
+                    userSelect: 'none', 
+                    backgroundColor: '#007bff', 
+                    color: 'white', 
+                    border: 'none', 
+                    padding: '5px 10px', 
+                    borderRadius: '3px', 
+                    cursor: 'pointer' 
+                }} 
+                onClick={() => clearTheMess()}
+            >
+                Clear the mess
+            </button>
         </>
     );
 }

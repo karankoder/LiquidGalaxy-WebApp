@@ -39,7 +39,7 @@
 }
 
 .circle.active {
-    background-color: #eab308;
+    background-color: #007bff;
     transform: scale(1.1);
 }
 
@@ -67,7 +67,7 @@
 }
 
 .connectorActive {
-    background-color: #eab308;
+    background-color: #007bff;
 }
 
 .connectorInactive {

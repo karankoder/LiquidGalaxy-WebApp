@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Voice from "./pages/Voice";
 import Gemini from "./pages/Gemini";
 import Profile from './pages/Profile';
-import Dummy from './pages/Dummy';
+import Settings from './pages/Settings';
 
 export const router = createBrowserRouter([
     {
@@ -28,8 +28,8 @@ export const router = createBrowserRouter([
                 element: <Profile />,
             },
             {
-                path: "dummy",
-                element: <Dummy />,
+                path: "settings",
+                element: <Settings />,
             }
         ],
     },

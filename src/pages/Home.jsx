@@ -2,15 +2,19 @@ import React from "react";
 import styles from "./Home.module.css";
 import { FaMicrophone, FaNetworkWired, FaUser } from "react-icons/fa";
 import { RiGeminiFill } from "react-icons/ri";
-import Header from '../components/Header';
+import Background from '../components/Background';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+
     const onConnect = () => {
-        console.log("Connect to LG");
+        navigate("/settings");
     };
 
     return (
         <>
+            <Background />
             <div className={styles.container}>
                 <div className={styles.heroSection}>
                     <h1 className={styles.heroTitle}>

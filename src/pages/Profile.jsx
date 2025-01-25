@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GiCheckMark } from "react-icons/gi";
-import { gsap } from "gsap"; // Import GSAP
+import { gsap } from "gsap";
 import styles from "./Profile.module.css";
 
 export default function Profile() {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './Gemini.module.css';
 import geminiIcon from '../assets/gemini.svg';
-import { FaPaperPlane } from 'react-icons/fa'; // Import the React icon
+import { FaPaperPlane } from 'react-icons/fa';
 
 export default function Gemini() {
     const [showChat, setShowChat] = useState(false);
@@ -46,7 +46,7 @@ export default function Gemini() {
 
     return (
         <div className={styles.app}>
-            {/* Gemini Icon */}
+            {!showChat && <div className={styles.textElement}>Click on the icon to open Gemini chat</div>}
             <button onClick={toggleChatWindow} className={styles.geminiIcon}>
                 <span className={styles.background}></span>
                 <svg className={styles.gemini} width="120" height="120" viewBox="0 0 213 215" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,6 @@ export default function Gemini() {
                     </defs>
                 </svg>
             </button>
-            {/* Chat Window */}
             <div className={`${styles.chatWindow} ${showChat ? styles.slideUp : styles.slideDown}`} style={{ borderRadius: '15px' }}>
                 <div className={styles.chatHeader}>
                     <span>Gemini Chat</span>

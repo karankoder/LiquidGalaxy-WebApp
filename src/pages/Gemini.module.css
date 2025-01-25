@@ -269,6 +269,16 @@
     }
 }
 
+.textElement {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @keyframes path {
     0% {
         clip-path: path("M0 121.5C0 54.3974 54.3974 0 121.5 0C188.603 0 243 54.3974 243 121.5C243 188.603 188.603 243 121.5 243C54.3974 243 0 188.603 0 121.5Z"
