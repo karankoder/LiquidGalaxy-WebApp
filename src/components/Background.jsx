@@ -1,3 +1,4 @@
+import { a } from 'framer-motion/client';
 import React, { useEffect, useRef } from 'react';
 
 export default function Background() {

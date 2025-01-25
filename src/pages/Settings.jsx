@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './Settings.module.css';
-import Background from '../components/Background';
 
 export default function Settings() {
     return (
         <>
-            <Background />
             <div className={styles.pageContainer}>
                 <div className={styles.formContainer}>
                     <h2 className={styles.formTitle}>Settings</h2>

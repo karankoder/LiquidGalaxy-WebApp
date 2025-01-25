@@ -10,9 +10,9 @@
     background: #1a1a3d;
     color: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 40%;
 }
 
 .formTitle {
@@ -42,19 +42,19 @@
 }
 
 .themeInput {
-    background-color: #0d0d2b; /* Match profile page */
-    border: 1px solid #333366; /* Match profile page */
-    color: white; /* Match profile page */
+    background-color: #0d0d2b;
+    border: 1px solid #333366;
+    color: white;
     padding: 8px;
-    border-radius: 8px; /* Increased border-radius for rounder corners */
+    border-radius: 8px;
     width: 100%;
     box-sizing: border-box;
     font-family: inherit;
-    transition: border-color 0.3s ease; /* Match profile page */
+    transition: border-color 0.3s ease;
 }
 
 .themeInput:focus {
-    border-color: #6495ed; /* Match profile page */
+    border-color: #6495ed;
     outline: none;
 }
 
@@ -74,4 +74,11 @@
 
 .button:disabled {
     background-color: #cccccc;
+}
+
+@media (max-width: 850px) {
+    .formContainer {
+        width: 90%;
+        /* Adjust width for smaller screens */
+    }
 }

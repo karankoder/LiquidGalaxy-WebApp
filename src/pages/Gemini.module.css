@@ -380,3 +380,9 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 850px) {
+    .chatWindow {
+        width: 75%;
+    }
+}

@@ -169,3 +169,15 @@
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+
+@media (max-width: 850px) {
+    .progressBar {
+        width: 95%;
+    }
+
+    .formContainer {
+        width: 90%;
+        /* Adjust width for smaller screens */
+    }
+}
