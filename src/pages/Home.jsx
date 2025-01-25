@@ -21,7 +21,7 @@ const Home = () => {
                         Track, analyze, and manage your Liquid Galaxy interactions with
                         powerful tools and insights
                     </p>
-                    <button onClick={onConnect}>Connect to LG</button>
+                    <button onClick={onConnect} className={styles.connectButton}>Connect to LG</button>
                 </div>
 
                 {/* Features Grid */}

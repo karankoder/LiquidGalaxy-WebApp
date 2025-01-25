@@ -3,7 +3,6 @@ import styles from "./App.module.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import { Toaster } from "react-hot-toast";
-import Header from './components/Header';
 
 function App() {
 

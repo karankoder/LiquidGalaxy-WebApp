@@ -1,0 +1,171 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0a051e;
+    padding: 20px;
+}
+
+.progressBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.progressStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle.active {
+    background-color: #eab308;
+    transform: scale(1.1);
+}
+
+.circle.inactive {
+    background-color: #555;
+    color: #888;
+}
+
+.description {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.connector {
+    width: 60px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 25px);
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    z-index: 0;
+}
+
+.connectorActive {
+    background-color: #eab308;
+}
+
+.connectorInactive {
+    background-color: #555;
+}
+
+.formContainer {
+    background: #1a1a3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.formTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.formDescription {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333366;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #0d0d2b;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #6495ed;
+    outline: none;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.previousButton {
+    background-color: #6c757d;
+}
+
+.previousButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.nextButton {
+    background-color: #007bff;
+}
+
+.nextButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

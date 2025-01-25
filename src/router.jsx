@@ -3,6 +3,8 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Voice from "./pages/Voice";
 import Gemini from "./pages/Gemini";
+import Profile from './pages/Profile';
+import Dummy from './pages/Dummy';
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +22,14 @@ export const router = createBrowserRouter([
             {
                 path: "gemini",
                 element: <Gemini />,
+            },
+            {
+                path: 'profile',
+                element: <Profile />,
+            },
+            {
+                path: "dummy",
+                element: <Dummy />,
             }
         ],
     },

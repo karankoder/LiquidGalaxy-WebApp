@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
-import { FaHome, FaMicrophone, FaRobot, FaChartLine, FaCog } from 'react-icons/fa';
+import { FaHome, FaMicrophone, FaUser, FaCog, FaRegUserCircle } from 'react-icons/fa';
+import { BiSolidUser } from 'react-icons/bi';
 import { RiGeminiFill } from "react-icons/ri";
 import Lottie from 'lottie-react';
 import styles from './Header.module.css';
 import homeAnimation from '../assets/home-animation.json';
 import geminiAnimation from '../assets/gemini-animation.json';
+import profileAnimation from '../assets/profile-animation2.json';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
+
+
 
 const Header = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isHomeAnimating, setIsHomeAnimating] = useState(false);
     const [isMicAnimating, setIsMicAnimating] = useState(false);
     const [isGeminiAnimating, setIsGeminiAnimating] = useState(false);
-    const handleNavClick = (index) => {
-        const pages = document.querySelectorAll('.container');
-        gsap.to(pages, {
-            x: `${-100 * index}%`,
-            duration: 1,
-            ease: 'power2.inOut'
-        });
-        setActiveIndex(index);
-    };
+    const [isProfileAnimating, setIsProfileAnimating] = useState(false);
+
 
 
     return (
@@ -32,7 +29,6 @@ const Header = () => {
                     onClick={() => {
                         setActiveIndex(0);
                         setIsHomeAnimating(true);
-                        // handleNavClick(0);
                     }}
                 >
                     {isHomeAnimating ? (
@@ -52,7 +48,6 @@ const Header = () => {
                     onClick={() => {
                         setActiveIndex(1);
                         setIsMicAnimating(true);
-                        // handleNavClick(1);
                     }}
                 >
                     {isMicAnimating ? (
@@ -80,12 +75,24 @@ const Header = () => {
                     />
                     <span className={styles['nav-text']}>Gemini</span>
                 </Link>
-                <Link to='/progress'
+                <Link to='/profile'
                     className={`${styles['nav-item']} ${activeIndex === 3 ? styles.active : ''}`}
-                    onClick={() => setActiveIndex(3)}
+                    onClick={() => {
+                        setActiveIndex(3);
+                        setIsProfileAnimating(true);
+                    }}
                 >
-                    <FaChartLine size={25} />
-                    <span className={styles['nav-text']}>Progress</span>
+                    {isProfileAnimating ? (
+                        <Lottie
+                            animationData={profileAnimation}
+                            loop={false}
+                            onComplete={() => setIsProfileAnimating(false)}
+                            style={{ width: '35px', height: '35px' }}
+                        />
+                    ) : (
+                        <BiSolidUser size={25} />
+                    )}
+                    <span className={styles['nav-text']}>Profile</span>
                 </Link>
                 <Link to='/settings'
                     className={`${styles['nav-item']} ${activeIndex === 4 ? styles.active : ''}`}
@@ -102,7 +109,7 @@ const Header = () => {
                     }}
                 ></span>
             </nav>
-        </header>
+        </header >
     );
 };
 
