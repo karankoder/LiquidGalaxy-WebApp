@@ -161,24 +161,6 @@ export default function Background() {
     return (
         <>
             <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}></canvas>
-            <button
-                style={{
-                    position: 'absolute',
-                    zIndex: 2,
-                    top: '10px',
-                    left: '10px',
-                    userSelect: 'none',
-                    backgroundColor: '#007bff',
-                    color: 'white',
-                    border: 'none',
-                    padding: '5px 10px',
-                    borderRadius: '3px',
-                    cursor: 'pointer'
-                }}
-                onClick={() => clearTheMess()}
-            >
-                Clear the mess
-            </button>
         </>
     );
 }
